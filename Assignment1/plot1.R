@@ -1,0 +1,7 @@
+png(file='Plot1.png')
+dataRead<-read.table('household_power_consumption.txt',header=TRUE,na.strings="?",sep=';')
+dataRead$Date<-as.Date(dataRead$Date,format="%d/%m/%Y")
+data<-subset(dataRead,Date== "2007-02-01" | Date=="2007-02-02" )
+data$datime<-strptime(paste(data$Date,data$Time,sep=" "),format="%Y-%m-%d %H:%M:%S")
+hist(data$Global_active_power,col='red',xlab='Global Active Power (kilowatts)',main='Global Active Power')
+dev.off()
