@@ -105,6 +105,8 @@ hist(tapply(newData$steps,newData$date,sum),col='red',xlab='Total steps per day[
 
 ```
 
+https://github.com/vsmaanju/Reproducible_Research_Assignment/blob/master/Assignment1/figure/unnamed-chunk-9-1.png?raw=true
+
      
 
 #### Mean total number of steps taken per day in modified DATAset  
