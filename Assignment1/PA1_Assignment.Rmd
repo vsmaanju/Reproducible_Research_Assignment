@@ -25,10 +25,13 @@ head(datanoNA)
 #### Make a histogram of the total number of steps taken each day 
 ```{r,echo=TRUE}  
 library(ggplot2)
-ggplot(datanoNA, aes(date, steps)) + geom_bar(stat = "identity", colour = "red", fill = "red", width = 0.7) + facet_grid(. ~ month, scales = "free") + labs(title = "Histogram of Total Number of Steps Taken Each Day", x = "Date", y = "Total number of steps")
+
+hist(tapply(datanoNA$steps,datanoNA$date,sum),col='red',xlab='Total steps per day',main="Total Number of Steps (perday)")
+
+
 ```
 
-!Histogram of the total number of steps taken each day (https://github.com/vsmaanju/Reproducible_Research_Assignment/blob/master/Assignment1/FIGURES/FIGURE1.png?raw=true)  
+
 
 
 
@@ -59,7 +62,6 @@ names(avgSteps)[2] <- "meanOfSteps"
 ggplot(avgSteps, aes(interval, meanOfSteps)) + geom_line(color = "steelblue", size = 0.8) + labs(title = "Time Series Plot of the 5-minute Interval", x = "5-minute intervals", y = "Average Number of Steps Taken")
 ```
 
-!Average daily activity pattern (https://github.com/vsmaanju/Reproducible_Research_Assignment/blob/master/Assignment1/FIGURES/FIGURE2.png?raw=true)  
 
 #### Which 5-minute interval, on average across all the days in the dataset, contains the maximum number of steps?
 
@@ -99,14 +101,11 @@ head(newData)
 #### Make a histogram of the total number of steps taken each day and Calculate and report the mean and median total number of steps taken per day.  
 
 ```{r,echo=TRUE}
+hist(tapply(newData$steps,newData$date,sum),col='red',xlab='Total steps per day[new Data]',main="Total Number of Steps (perday)[New Data]")
 
-ggplot(newData, aes(date, steps)) + geom_bar(stat = "identity",
-                                             colour = "red",
-                                             fill = "red",
-                                             width = 0.7) + facet_grid(. ~ month, scales = "free") + labs(title = "Histogram of Total Number of Steps Taken Each Day (no missing data)", x = "Date", y = "Total number of steps")
 ```
 
-!Average Steps Taken (https://github.com/vsmaanju/Reproducible_Research_Assignment/blob/master/Assignment1/FIGURES/FIGURE3.png?raw=true)      
+     
 
 #### Mean total number of steps taken per day in modified DATAset  
 
@@ -184,4 +183,4 @@ xyplot(avgSteps$meanOfSteps ~ avgSteps$interval | avgSteps$weekdays,
        xlab = "Interval", ylab = "Number of steps")
 ```
 
-!Panel Plot (https://github.com/vsmaanju/Reproducible_Research_Assignment/blob/master/Assignment1/FIGURES/FIGURE4.png?raw=true)   
+
