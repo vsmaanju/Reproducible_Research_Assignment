@@ -185,4 +185,4 @@ xyplot(avgSteps$meanOfSteps ~ avgSteps$interval | avgSteps$weekdays,
        xlab = "Interval", ylab = "Number of steps")
 ```
 
-
+https://github.com/vsmaanju/Reproducible_Research_Assignment/blob/master/Assignment1/figure/unnamed-chunk-16-1.png?raw=true
