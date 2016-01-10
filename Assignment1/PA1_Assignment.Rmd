@@ -30,7 +30,7 @@ hist(tapply(datanoNA$steps,datanoNA$date,sum),col='red',xlab='Total steps per da
 
 
 ```
-
+!(https://github.com/vsmaanju/Reproducible_Research_Assignment/blob/master/Assignment1/figure/unnamed-chunk-2-1.png?raw=true)
 
 
 
